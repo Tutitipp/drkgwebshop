@@ -1,0 +1,173 @@
+@font-face {
+    src: url(fonts/Dosis-VariableFont_wght.ttf);
+    font-family: dosis;
+}
+* {
+    margin:0;
+    padding:0;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #373737;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+body {
+    letter-spacing: 3px;
+    font-family: dosis;
+    background: #333;
+    color: #fff;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    /*smooth schroll*/
+    overflow-y: scroll; 
+    overflow: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.navbar{
+    position:fixed;
+    top: 0;
+    z-index:1;
+    display:flex;
+    width:100%;
+    height: 60px;
+    background: rgba(0,0,0,0.7);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar ul li{
+    margin: 0 1rem;
+    padding: 1rem;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #f4f4f4;
+}
+
+.navbar ul li a:hover{
+    color: skyblue;
+}
+
+section{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: center;
+}
+
+section h1 {
+    font-size:4rem;
+}
+
+section p {
+    font-size: 1.5rem;
+}
+
+    section#home {
+        background: url('') no-repeat center center/cover;;
+        
+    }
+
+    section#clothing {
+        background: url('') no-repeat center center/cover;;
+        
+    }
+
+    section#accessory {
+        background: url('') no-repeat center center/cover;;
+        
+    }
+
+    section#extras {
+        background: url('') no-repeat center center/cover;;
+    }
+
+    section#about {
+        background: url('') no-repeat center center/cover;;
+        
+    }
+    .logo{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url("logoinv.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition-property:background;
+        transition-duration: 1s;
+    }
+    .logo:hover{
+        background: none;
+        background-color: #137333;
+    }
+    .logo:hover:after{
+        content: attr(data-hover);
+    }
+    #logos{
+        background-color:black;
+    }
+    #logo-holder {
+        width:60vw;
+        height: 60vw;
+        display: flexbox;
+        margin: auto;
+    }
+    #logo-holder .image{
+        width: 100%;  
+    }
+    #logo-holder .image, #logo-holder .text {
+        transition: opacity 0.5s ease-in-out;
+    }
+        #logo-holder .text {
+            padding: 0.5vw 1vw;
+            display: inline-block;
+            justify-content: center;
+            position: relative;
+            top: -55%;
+            opacity: 0;
+            font-size: 3vw;
+            color: #f1f1f1;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    #logo-holder:hover .image {
+        opacity:0;
+    }
+    #logo-holder:hover .text {
+        opacity:1;
+    }
