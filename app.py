@@ -9,6 +9,11 @@ def admin():
 @app.route('/')
 def index():
     
+    return render_template('home.html')
+
+@app.route('/index.html') #Itten e
+def home():
+    
     return render_template('index.html')
     
 if __name__ == "__main__":
