@@ -13,15 +13,14 @@ database = scoped_session(sessionmaker(bind=engine))
 def admin():
     database.execute("INSERT INTO merch (name, tags) VALUE ('Me', 1234)")
     database.commit()
+    
     return "Kezelőfelület helye"
 @app.route('/')
 def index():
-    
     return render_template('home.html')
 
 @app.route('/index.html') #Itten e
 def home():
-    
     return render_template('index.html')
     
 if __name__ == "__main__":
