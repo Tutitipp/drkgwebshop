@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>DRKG Webshop</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/logo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/trans.css') }}">
     <link rel="icon" href={{ url_for('static', filename='images/logo.png') }} type="image/icon type">
 
 </head>
@@ -15,10 +16,10 @@
 <body>
     <div class="container">
         
-        <section>
-            <div>
-                <img src={{ url_for('static', filename='images/logoinv.png') }}/>
-                <a href="index.html"><div>Tovább a kezdőlapra</div></a>
+        <section id="logos">
+            <div id="logo-holder">
+                <img src={{ url_for('static', filename='images/logoinv.png') }} class="image" />
+                <a href="index.html"><div class="text">Tovább a kezdőlapra</div></a>
             </div>
         </section>
         

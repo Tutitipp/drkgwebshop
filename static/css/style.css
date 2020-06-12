@@ -5,8 +5,35 @@
 * {
     margin:0;
     padding:0;
-    text-decoration: none;
-    list-style: none;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+}
+x
+/* Track */
+::-webkit-scrollbar-track {
+    background: #373737;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+body {
+    letter-spacing: 3px;
+    font-family: dosis;
+    background: #333;
+    color: #fff;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .container {
@@ -19,14 +46,36 @@
     scroll-snap-type: y mandatory;
 }
 
-body {
-    letter-spacing: 3px;
-    font-family: dosis;
-    background: #333;
-    color: #fff;
-    line-height: 1.6;
-    height: 100vh;
-    overflow: hidden;
+.navbar{
+    position:fixed;
+    top: 0;
+    z-index:1;
+    display:flex;
+    width:100%;
+    height: 60px;
+    background: #474448;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar ul li{
+    margin: 0 1rem;
+    padding: 1rem;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #f4f4f4;
+}
+
+.navbar ul li a:hover{
+    color: white;
 }
 
 section{
@@ -40,43 +89,22 @@ section{
     scroll-snap-align: center;
 }
 
-section#home {
-    background: url('') no-repeat center center/cover;;
+section h1 {
+    font-size:4rem;
 }
 
-section#clothing {
-    background: url('') no-repeat center center/cover;;
+section p {
+    font-size: 1.5rem;
 }
 
-section#accessory {
-    background: url('') no-repeat center center/cover;;
-}
+    section#home {
+        background: url('') no-repeat center center/cover;;
+        
+    }
 
-section#extras {
-    background: url('') no-repeat center center/cover;;
-}
-
-section#about {
-    background: url('') no-repeat center center/cover;;
-}
-
-.social {
-    text-decoration:none;
-    border:0;
-    width:20vw;
-    height:20vw;
-    padding:2px;
-    margin:5px;
-    color:#ffffff;
-    border-radius:50%;
-    background-color:#333;
-}
-
-@media only screen and (min-width:700px){
-
-    .social {
-        width:10vw;
-        height:10vw;
+    section#clothing {
+        background: url('') no-repeat center center/cover;;
+        
     }
 
     .navbar{
@@ -111,9 +139,9 @@ section#about {
         overflow-y: hidden;
     }
     .navbar a:hover{
-        padding-left: 80px;
-        color: #fff;
-        background-color: rgba(255,0,0,0.7);
+        padding-left: 60px;
+        color: white;
+        background-color: #223e3c;
     }
     .navbar li:hover{
         width:120%;
@@ -147,7 +175,3 @@ section#about {
         font-size:4rem;
     }
     
-    section p {
-        font-size: 1.5rem;
-    }
-}
