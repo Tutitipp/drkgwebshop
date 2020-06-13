@@ -5,6 +5,7 @@
 * {
     margin:0;
     padding:0;
+    text-decoration: none;
 }
 
 body {
@@ -20,44 +21,18 @@ body {
 .container {
     width: 100%;
     height: 100%;
-    /*smooth schroll*/
     overflow-y: scroll; 
     overflow: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
 }
-
 .navbar{
     position:fixed;
-    top: 0;
-    z-index:1;
-    display:flex;
-    width:100%;
-    height: 60px;
-    background: #474448;
-}
-
-.navbar ul {
-    display: flex;
-    list-style: none;
-    width: 100%;
-    justify-content: center;
-}
-
-.navbar ul li{
-    margin: 0 1rem;
-    padding: 1rem;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #f4f4f4;
-}
-
-.navbar ul li a:hover{
-    color: white;
-}
+    width:300px;
+    height: 100%;
+    background: black;
+    transition: all 0.4s ease;
+}    
 
 section{
     display:flex;
@@ -65,9 +40,9 @@ section{
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 100%;
     height: 100vh;
     scroll-snap-align: center;
+    transition: all 0.4s ease;
 }
 
 section h1 {
@@ -78,26 +53,125 @@ section p {
     font-size: 1.5rem;
 }
 
-    section#home {
-        background: url('') no-repeat center center/cover;;
-        
-    }
-
-    section#clothing {
-        background: url('') no-repeat center center/cover;;
-        
-    }
-
 @media only screen and (min-width:700px){
     .navbar{
-        position:fixed;
+        left:-350px;
+    }
+    #check{
+        z-index: 1000;
+        position: absolute;
+        left:23px;
+        top: 23px;
+        opacity: 0;
+        height: 40px;
+        width:40px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+    
+    #menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        position: absolute;
+        left:20px;
+        top: 20px;
+        height: 40px;
+        width:40px;
+        border: 3px solid black;
+        background-color: black;
+        transition:.7s;
+        overflow: hidden;
+    }
+    #hamg{
+        width: 70%;
+        border: 2px solid white;
+        z-index: 2;
+        transition: 0.7s;
+    }
+    #hamg::before, #hamg::after{
+        content: '';
+        width: 70%;
+        border: 2px solid white;
+        z-index: 2;
+        position: absolute;
+        transition: 0.7s;
+    }
+    #hamg::before{
+        top:8px;
+        left:4px;
+    }
+    #hamg::after{
+        bottom:8px;
+        left:4px;
+    }
+    #check:checked ~ section{
+        margin-left: 300px;
+    }
+    #check:checked ~ .navbar{
         left: 0;
-        z-index:1;
-        width:300px;
-        height: 100%;
-        background: rgba(0,0,0,0.7);
-    }    
-
+    }
+    #check:checked ~ #menu{
+        opacity: 0;
+    }
+    #check:checked ~ #hamg{
+        opacity: 0;
+    }
+    #check:checked ~ #hamg::before{
+        opacity: 0;
+    }
+    #check:checked ~ #hamg::after{
+        opacity: 0;
+    }
+    #check:checked ~ #close{
+        opacity: 1;
+    }
+    #check:checked ~ #closer{
+        opacity: 1;
+    }
+    #check:checked ~ #closer::before{
+        opacity: 1;
+    }
+    #close{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        position: absolute;
+        left:20px;
+        top: 20px;
+        height: 40px;
+        width:40px;
+        border: 3px solid black;
+        background-color: black;
+        transition:all .7s ease;
+        overflow: hidden;
+        opacity: 0;
+    }
+    #closer{
+        width: 70%;
+        background-color: white;
+        border: 2px solid white;
+        z-index: 1;
+        transform: rotate(45deg);
+        transition:all .7s ease;
+    }
+    #closer::before{
+        content: '';
+        width: 100%;
+        background-color: white;
+        border: 2px solid white;
+        z-index: 1;
+        transform: rotate(90deg);
+        position: absolute;
+        left: -2px;
+        bottom: -2px;
+        transition:all .7s ease;
+    }
+    #specko{
+        height: 70px;
+    }
     .navbar ul{
         display: block;
         display: table;

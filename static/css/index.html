@@ -9,39 +9,52 @@
     <link rel="icon" href={{ url_for('static', filename='logo.png') }} type="image/icon type">
 </head>
 <body>
+    <input type="checkbox" id="check">
+    <div class="menu"><i class="hamg"></i></div>
     <div class="container">
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">Kezdőlap</a></li>
-                <li><a href="#clothing">Ruházat</a></li>
-                <li><a href="#accessory">Kiegészítők</a></li>
-                <li><a href="#extras">Extrák</a></li>
-                <li><a href="#about">Rólunk</a></li>
-                <!-- <li><a href="#cart">Kosár</a></li> -->
-                </ul>
+        <div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home">Kezdőlap</a></li>
+                    <li><a href="#clothing">Ruházat</a></li>
+                    <li><a href="#accessory">Kiegészítők</a></li>
+                    <li><a href="#extras">Extrák</a></li>
+                    <li><a href="#about">Rólunk</a></li>
+                    <!-- <li><a href="#cart">Kosár</a></li> -->
+                    </ul>
             </nav>
+        </div>
             <section id="logos">
                 <div id="logo-holder">
                     <img src="{{ url_for('static', filename='logoinv.png') }}" class="image" />
                     <a href="#home"><div class="text">Tovább a kezdőlapra</div></a>
                 </div>
             </section>
+
             <section id="home">
                 <h1>Kezdőlap!</h1>
                 <p> placerat vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt dui ut ornare lectus</p>
             </section>
+
             <section id="clothing">
                 <h1>Ruházat</h1>
                 <p> placerat vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt dui ut ornare lectus</p>
             </section>
+
             <section id="accessory">
                 <h1>Kiegészítők</h1>
                 <p> placerat vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt dui ut ornare lectus</p>
             </section>
+
             <section id="extras">
                 <h1>Extrák</h1>
                 <p> placerat vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt dui ut ornare lectus</p>
             </section>
+
+
+
+
+
             <section id="about">
                 <h1>Rólunk</h1>
                 <div class="socialul">
@@ -65,7 +78,6 @@
                     </div>
                 </div>
             </section>
-
-        </div>
+    </div>
     </body>
     </html>
