@@ -6,25 +6,6 @@
     margin:0;
     padding:0;
 }
-/* width */
-::-webkit-scrollbar {
-    width: 0px;
-}
-x
-/* Track */
-::-webkit-scrollbar-track {
-    background: #373737;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
 
 body {
     letter-spacing: 3px;
@@ -107,6 +88,7 @@ section p {
         
     }
 
+@media only screen and (min-width:700px){
     .navbar{
         position:fixed;
         left: 0;
@@ -168,10 +150,4 @@ section p {
     #exception img{
         width: 100%;
     }
-
-
-
-    section h1 {
-        font-size:4rem;
-    }
-    
+}
