@@ -1,0 +1,50 @@
+body {
+    letter-spacing: 3px;
+    font-family: dosis;
+    background: #474448;
+    color: #f1f0ea;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container_prod
+{
+    margin-top: 100px;
+    
+}
+.newarrival 
+{
+    background: green;
+    width: 50px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+.col-md-7 h2
+{
+    color: #555;
+}
+.price
+{
+    color: red;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+
+}
+input{
+
+    border: 1px solid black;
+    font-weight: bold;
+    height: 33px;
+    text-align: center;
+    width: 30px;
+}
+.note{
+    background: #fe980f;
+    color: white;
+    font-size: 15px;
+    margin-left: 20px;
+
+}
