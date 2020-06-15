@@ -28,8 +28,9 @@ body {
 }
 .navbar{
     position:fixed;
-    width:300px;
-    height: 100%;
+    left:-120vw;
+    width:100%;
+    height: 100vh;
     background: black;
     transition: all 0.4s ease;
 }    
@@ -43,6 +44,7 @@ section{
     height: 100vh;
     scroll-snap-align: center;
     transition: all 0.4s ease;
+    overflow: hidden;
 }
 
 section h1 {
@@ -52,9 +54,7 @@ section h1 {
 section p {
     font-size: 1.5rem;
 }
-.navbar{
-    visibility: hidden;
-}
+@media only screen and (min-height:800px)
 #check{
     z-index: 1000;
     position: absolute;
@@ -66,22 +66,22 @@ section p {
     cursor: pointer;
     transition: all 0.4s ease;
 }
-
+#check:checked ~ section{
+    margin-left: 100vw;
+}
+#check:checked ~ .navbar{
+    left: 0;
+}
 @media only screen and (min-width:1000px) and (min-height:830px){
     a{
         font-size: 20px;
     }
     .navbar{
+        width: 300px;
+        top:0;
         left:-350px;
         visibility: initial;
     }
-    #check{
-        left:23px;
-        top: 23px;
-        height: 40px;
-        width:40px;
-    }
-    
     #menu{
         display: flex;
         align-items: center;
@@ -216,7 +216,6 @@ section p {
     .navbar li:hover{
         width:120%;
     }
-
     #exception{
         display: table-row;
     }
