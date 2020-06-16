@@ -19,10 +19,13 @@ def index():
     
     return render_template('home.html')
 
-@app.route('/index.html') #Itten e
+@app.route('/index') #Itten e
 def home():
-    
     return render_template('index.html')
     
+@app.route('/product')
+def product():
+    return render_template('product.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

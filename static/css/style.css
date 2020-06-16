@@ -7,7 +7,6 @@
     padding:0;
     text-decoration: none;
 }
-
 body {
     letter-spacing: 3px;
     font-family: dosis;
@@ -17,7 +16,6 @@ body {
     height: 100vh;
     
 }
-
 .container {
     width: 100%;
     height: 100%;
@@ -34,7 +32,6 @@ body {
     background: black;
     transition: all 0.4s ease;
 }    
-
 section{
     display:flex;
     flex-direction: column;
@@ -42,19 +39,10 @@ section{
     justify-content: center;
     text-align: center;
     height: 100vh;
-    scroll-snap-align: center;
     transition: all 0.4s ease;
     overflow: hidden;
+    scroll-snap-align: center;
 }
-
-section h1 {
-    font-size:4rem;
-}
-
-section p {
-    font-size: 1.5rem;
-}
-@media only screen and (min-height:800px)
 #check{
     z-index: 1000;
     position: absolute;
@@ -66,13 +54,217 @@ section p {
     cursor: pointer;
     transition: all 0.4s ease;
 }
-#check:checked ~ section{
-    margin-left: 100vw;
-}
 #check:checked ~ .navbar{
     left: 0;
 }
-@media only screen and (min-width:1000px) and (min-height:830px){
+#menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: absolute;
+    left:20px;
+    top: 20px;
+    height: 40px;
+    width:40px;
+    border: 3px solid black;
+    background-color: black;
+    transition:.7s;
+    overflow: hidden;
+}
+#hamg{
+    width: 70%;
+    border: 2px solid #f1f0ea;
+    z-index: 2;
+    transition: 0.7s;
+}
+#hamg::before, #hamg::after{
+    content: '';
+    width: 70%;
+    border: 2px solid #f1f0ea;
+    z-index: 2;
+    position: absolute;
+    transition: 0.7s;
+}
+#hamg::before{
+    top:8px;
+    left:4px;
+}
+#hamg::after{
+    bottom:8px;
+    left:4px;
+}
+#check:checked ~ #menu{
+    opacity: 0;
+}
+#check:checked ~ #hamg{
+    opacity: 0;
+}
+#check:checked ~ #hamg::before{
+    opacity: 0;
+}
+#check:checked ~ #hamg::after{
+    opacity: 0;
+}
+#check:checked ~ #close{
+    opacity: 1;
+}
+#check:checked ~ #closer{
+    opacity: 1;
+}
+#check:checked ~ #closer::before{
+    opacity: 1;
+}
+#close{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: absolute;
+    left:20px;
+    top: 20px;
+    height: 40px;
+    width:40px;
+    border: 3px solid #223e3c;
+    background-color: #223e3c;
+    transition:all .7s ease;
+    overflow: hidden;
+    opacity: 0;
+}
+#closer{
+    width: 70%;
+    background-color: #f1f0ea;
+    border: 2px solid #f1f0ea;
+    z-index: 1;
+    transform: rotate(45deg);
+    transition:all .7s ease;
+}
+#closer::before{
+    content: '';
+    width: 100%;
+    background-color: #f1f0ea;
+    border: 2px solid #f1f0ea;
+    z-index: 1;
+    transform: rotate(90deg);
+    position: absolute;
+    left: -2px;
+    bottom: -2px;
+    transition:all .7s ease;
+}
+#specko{
+    height: 70px;
+}
+.navbar ul{
+    display: block;
+    display: table;
+    height: 100%;
+    width:100%;
+}
+.navbar li{
+    display: table-row;
+    width: 100%;
+    height: 100px;
+    transition: .4s;
+}
+.navbar a{
+    color: #f1f0ea;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding-top: 2.5vh;
+    padding-left: 40px;
+    transition: .4s;
+    overflow-y: hidden;
+}
+.navbar a:hover{
+    padding-left: 60px;
+    color: #f1f0ea;
+    background-color: #223e3c;
+}
+.navbar li:hover{
+    width:120%;
+}
+#exception{
+    display: table-row;
+}
+#exception *{
+    padding: 0;
+}
+#exception a{
+    height: 100%;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+#exception:hover{
+    width:100%;
+}
+#exception a:hover{
+    background-color: transparent;
+}
+#exception img{
+    width: 100%;
+}
+section h1 {
+    font-size:4rem;
+}
+section p {
+    font-size: 1.5rem;
+}
+@media only screen and (max-width:500px) and (max-height:900px){
+    #exception{
+        display: none;
+    }
+    .navbar li{
+        height: 17%;
+    }
+    #check{
+        left:18px;
+        top: 18px;
+        height: 30px;
+        width:30px;
+    }
+    #menu{
+        left:15px;
+        top: 15px;
+        height: 30px;
+        width:30px;
+    }
+    #hamg{
+        border: 2px solid #f1f0ea;
+    }
+    #close{
+        left:15px;
+        top: 15px;
+        height: 30px;
+        width:30px;
+    }
+    #hamg::before{
+        top:6px;
+        left:3px;
+    }
+    #hamg::after{
+        bottom:6px;
+        left:3px;
+    }
+}
+@media only screen and (min-width:500px) and (min-height:900px){
+    #exception{
+        display: none;
+    }
+    .navbar li{
+        height: 17%;
+    }
+    a{
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width:1000px) and (min-height:900px){
+    #check:checked ~ section{
+        left: 100vw;
+    }
+}
+@media only screen and (min-width:1000px) and (max-height:900px){
     a{
         font-size: 20px;
     }
@@ -82,159 +274,24 @@ section p {
         left:-350px;
         visibility: initial;
     }
-    #menu{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-        position: absolute;
-        left:20px;
-        top: 20px;
-        height: 40px;
-        width:40px;
-        border: 3px solid black;
-        background-color: black;
-        transition:.7s;
-        overflow: hidden;
-    }
-    #hamg{
-        width: 70%;
-        border: 2px solid #f1f0ea;
-        z-index: 2;
-        transition: 0.7s;
-    }
-    #hamg::before, #hamg::after{
-        content: '';
-        width: 70%;
-        border: 2px solid #f1f0ea;
-        z-index: 2;
-        position: absolute;
-        transition: 0.7s;
-    }
-    #hamg::before{
-        top:8px;
-        left:4px;
-    }
-    #hamg::after{
-        bottom:8px;
-        left:4px;
-    }
     #check:checked ~ section{
         margin-left: 300px;
     }
-    #check:checked ~ .navbar{
-        left: 0;
+}
+@media only screen and (min-width:1000px) and (min-height:900px){
+    a{
+        font-size: 25px;
     }
-    #check:checked ~ #menu{
-        opacity: 0;
-    }
-    #check:checked ~ #hamg{
-        opacity: 0;
-    }
-    #check:checked ~ #hamg::before{
-        opacity: 0;
-    }
-    #check:checked ~ #hamg::after{
-        opacity: 0;
-    }
-    #check:checked ~ #close{
-        opacity: 1;
-    }
-    #check:checked ~ #closer{
-        opacity: 1;
-    }
-    #check:checked ~ #closer::before{
-        opacity: 1;
-    }
-    #close{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1;
-        position: absolute;
-        left:20px;
-        top: 20px;
-        height: 40px;
-        width:40px;
-        border: 3px solid #223e3c;
-        background-color: #223e3c;
-        transition:all .7s ease;
-        overflow: hidden;
-        opacity: 0;
-    }
-    #closer{
-        width: 70%;
-        background-color: #f1f0ea;
-        border: 2px solid #f1f0ea;
-        z-index: 1;
-        transform: rotate(45deg);
-        transition:all .7s ease;
-    }
-    #closer::before{
-        content: '';
-        width: 100%;
-        background-color: #f1f0ea;
-        border: 2px solid #f1f0ea;
-        z-index: 1;
-        transform: rotate(90deg);
-        position: absolute;
-        left: -2px;
-        bottom: -2px;
-        transition:all .7s ease;
-    }
-    #specko{
-        height: 70px;
-    }
-    .navbar ul{
-        display: block;
-        display: table;
-        height: 100%;
-        width:100%;
+    .navbar{
+        width: 400px;
+        top:0;
+        left:-450px;
+        visibility: initial;
     }
     .navbar li{
-        display: table-row;
-        width: 100%;
-        height: 100px;
-        transition: .4s;
+        height: 150px;
     }
-
-    .navbar a{
-        color: #f1f0ea;
-        display: block;
-        height: 100%;
-        width: 100%;
-        padding-top: 2.5vh;
-        padding-left: 40px;
-        transition: .4s;
-        overflow-y: hidden;
-    }
-    .navbar a:hover{
-        padding-left: 60px;
-        color: #f1f0ea;
-        background-color: #223e3c;
-    }
-    .navbar li:hover{
-        width:120%;
-    }
-    #exception{
-        display: table-row;
-    }
-    #exception *{
-        padding: 0;
-    }
-    #exception a{
-        height: 100%;
-        position: relative;
-        left: 0;
-        bottom: 0;
-    }
-    #exception:hover{
-        width:100%;
-    }
-    #exception a:hover{
-        background-color: transparent;
-    }
-    #exception img{
-        width: 100%;
+    #check:checked ~ section{
+        margin-left: 400px;
     }
 }
